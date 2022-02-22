@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keytetst</title>
+    <style>
+        input {
+            position: relative;
+            right: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>KEYBOARD TESTER</h1>
+    <p>Test your keys</p>
+    <button onClick="window.location.reload();"> &#10227; refresh</button>
+    <br>
+    <input id="f" onkeydown="myFunction(event)"></input>
+
+</html>
+</body>
+<script>
+    document.getElementById("f").focus();
+    let input = document.getElementById("f");
+
+    input.onblur = inputBlur;
+
+    function inputBlur() {
+        document.getElementById("f").focus({ preventScroll: true });
+    }
+    function myFunction(event) {
+        var x = event.key;
+        const newDiv = document.createElement("div");
+        var k = event.key;
+        if (k == " ") {
+            k = "Space";
+        }
+        const newContent = document.createTextNode("Last key pressed is: " + k);
+        newDiv.appendChild(newContent);
+        document.body.insertBefore(newDiv, document.getElementById("f"));
+    }
+</script>
+
+</html>
