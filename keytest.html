@@ -5,44 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>keytetst</title>
-    <style>
-        input {
-            position: relative;
-            right: 100%;
-        }
-    </style>
+    <title>key test</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body>
-    <h1>KEYBOARD TESTER</h1>
-    <p>Test your keys</p>
-    <button onClick="window.location.reload();"> &#10227; refresh</button>
-    <br>
-    <input id="f" onkeydown="myFunction(event)"></input>
+    <div class="container-fluid text-center mt-5">
+        <h1>You pressed </h1>
 
-</html>
+        <div class="text-center mt-3 mb-3">
+            <kbd class=" lastkey display-2">
+                none
+            </kbd>
+        </div>
+        <strong>Play Sound <input type="checkbox" class="playaudiocheck"></strong>
+
+
+    </div>
 </body>
-<script>
-    document.getElementById("f").focus();
-    let input = document.getElementById("f");
-
-    input.onblur = inputBlur;
-
-    function inputBlur() {
-        document.getElementById("f").focus({ preventScroll: true });
-    }
-    function myFunction(event) {
-        var x = event.key;
-        const newDiv = document.createElement("div");
-        var k = event.key;
-        if (k == " ") {
-            k = "Space";
-        }
-        const newContent = document.createTextNode("Last key pressed is: " + k);
-        newDiv.appendChild(newContent);
-        document.body.insertBefore(newDiv, document.getElementById("f"));
-    }
-</script>
+<script src="/key.js"></script>
+<!-- source for js https://keyboardtestt.com/wp-content/cache/min/1/c5b9dc3e0a960b437623780da24b5dc9.js -->
 
 </html>
